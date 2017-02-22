@@ -8,6 +8,7 @@
 
 #import "GGScanViewController.h"
 #import <AVFoundation/AVFoundation.h>
+#import "GGQRCodeTool.h"
 
 @interface GGScanViewController ()
 

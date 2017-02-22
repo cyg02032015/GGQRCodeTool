@@ -6,10 +6,17 @@
 //  Copyright © 2017年 YoungKook. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface GGQRCodeRecognitionTool : NSObject
 
-+ (NSMutableArray *)recognitionWithQRCode:(UIImage *)qrImage;
+
+/**
+ 二维码识别
+
+ @param qrImage 二维码图片
+ @return 识别出来的string数组
+ */
++ (NSMutableArray<NSString *> *)recognitionWithQRCode:(UIImage *)qrImage;
 
 @end

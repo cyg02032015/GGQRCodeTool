@@ -9,6 +9,7 @@
 #import "GGScanTool.h"
 #import <AVFoundation/AVFoundation.h>
 #import <CoreGraphics/CoreGraphics.h>
+#import "GGConst.h"
 
 @interface GGScanTool () <AVCaptureMetadataOutputObjectsDelegate>
 
@@ -16,11 +17,8 @@
 @property (nonatomic, strong)AVCaptureMetadataOutput *output; //创建输出流
 @property (nonatomic, strong)AVCaptureSession *session;
 @property (nonatomic, strong)AVCaptureVideoPreviewLayer *previewLayer;
-@property (nonatomic, weak)UIImageView *line;
-@property (nonatomic, strong)NSLayoutConstraint *bottomConstraint;
 @property (nonatomic, strong)UIView *inView;
 @property (nonatomic, assign)CGRect rect;
-@property (nonatomic, strong)NSTimer *timer;
 
 @end
 
@@ -36,18 +34,14 @@
 }
 
 - (void)ggScanView:(UIView *)inView result:(GGScanResult)result {
-    [self ggScanView:inView scanRect:CGRectMake(ScreenWidth/2 - 230/2, 100, 230, 230) canAnimation:NO result:result];
+    [self ggScanView:inView scanRect:CGRectMake(ScreenWidth/2 - 230/2, 100, 230, 230) result:result];
 }
 
 - (void)ggScanView:(UIView *)inView rect:(CGRect)rect result:(GGScanResult)result {
-    [self ggScanView:inView scanRect:rect canAnimation:NO result:result];
+    [self ggScanView:inView scanRect:rect result:result];
 }
 
-- (void)ggScanView:(UIView *)inView canAnimation:(BOOL)canAnimation result:(GGScanResult)result {
-    [self ggScanView:inView scanRect:CGRectMake(ScreenWidth/2 - 230/2, 100, 230, 230)  canAnimation:canAnimation result:result];
-}
-
-- (void)ggScanView:(UIView *)inView scanRect:(CGRect)rect canAnimation:(BOOL)canAnimation result:(GGScanResult)result {
+- (void)ggScanView:(UIView *)inView scanRect:(CGRect)rect result:(GGScanResult)result {
     self.inView = inView;
     if ([self.session canAddInput:self.input] && [self.session canAddOutput:self.output]) {
         [self.session addInput:_input];
@@ -63,84 +57,31 @@
         _output.rectOfInterest = [_previewLayer metadataOutputRectOfInterestForRect:rect];
     }];
     
+    if (!self.backView) {
+        [self addBack:rect inView:inView];
+    }
     if (inView.layer.sublayers == nil || ![inView.layer.sublayers containsObject:_previewLayer]) {
         self.previewLayer.frame = inView.bounds;
         [inView.layer insertSublayer:self.previewLayer atIndex:0];
     }
     [inView addSubview:[self drawBlackShadow:rect inView:inView]]; // 添加半透明黑色阴影
-    if (canAnimation) {
-        [self addCornerLine:rect inView:inView];
-        self.timer = [NSTimer timerWithTimeInterval:1 target:self selector:@selector(updownAnimation) userInfo:nil repeats:YES];
-        [[NSRunLoop mainRunLoop] addTimer:_timer forMode:NSDefaultRunLoopMode];
-    }
     [_session startRunning];
 }
 
-- (void)updownAnimation {
-    self.bottomConstraint.constant = -self.rect.size.height;
-    [self.inView layoutIfNeeded];
-    [UIView animateWithDuration:1.0 animations:^{
-        self.bottomConstraint.constant = self.rect.size.height;
-        [self.inView layoutIfNeeded];
-    }];
-}
-
 /**
- 布局四角
+ 添加可扫描区域透明视图用来添加类似微信的四角布局
  */
-- (void)addCornerLine:(CGRect)rect inView:(UIView *)inView {
-    
+- (void)addBack:(CGRect)rect inView:(UIView *)inView {
     UIView *backView = [[UIView alloc] init];
     backView.clipsToBounds = YES;
     backView.backgroundColor = [UIColor clearColor];
     [inView addSubview:backView];
+    self.backView = backView;
     backView.translatesAutoresizingMaskIntoConstraints = NO;
     [inView addConstraint:[NSLayoutConstraint constraintWithItem:backView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:inView attribute:NSLayoutAttributeTop multiplier:1.f constant:rect.origin.y]];
     [inView addConstraint:[NSLayoutConstraint constraintWithItem:backView attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:inView attribute:NSLayoutAttributeLeft multiplier:1.f constant:rect.origin.x]];
     [inView addConstraint:[NSLayoutConstraint constraintWithItem:backView attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.f constant:rect.size.width]];
     [inView addConstraint:[NSLayoutConstraint constraintWithItem:backView attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.f constant:rect.size.height]];
-    
-    UIImageView *topLeft = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"scan_1"]];
-    [backView addSubview:topLeft];
-    topLeft.translatesAutoresizingMaskIntoConstraints = NO;
-    [backView addConstraint:[NSLayoutConstraint constraintWithItem:topLeft attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:backView attribute:NSLayoutAttributeTop multiplier:1 constant:0]];
-    [backView addConstraint:[NSLayoutConstraint constraintWithItem:topLeft attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:backView attribute:NSLayoutAttributeLeft multiplier:1 constant:0]];
-    [backView addConstraint:[NSLayoutConstraint constraintWithItem:topLeft attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:19]];
-    [backView addConstraint:[NSLayoutConstraint constraintWithItem:topLeft attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:19]];
-    
-    UIImageView * topRight = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"scan_2"]];
-    [backView addSubview:topRight];
-    topRight.translatesAutoresizingMaskIntoConstraints = NO;
-    [backView addConstraint:[NSLayoutConstraint constraintWithItem:topRight attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:topLeft attribute:NSLayoutAttributeCenterY multiplier:1 constant: 0]];
-    [backView addConstraint:[NSLayoutConstraint constraintWithItem:topRight attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:backView attribute:NSLayoutAttributeRight multiplier:1 constant:0]];
-    [backView addConstraint:[NSLayoutConstraint constraintWithItem:topRight attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:topLeft attribute:NSLayoutAttributeWidth multiplier:1 constant:0]];
-    [backView addConstraint:[NSLayoutConstraint constraintWithItem:topRight attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:topLeft attribute:NSLayoutAttributeHeight multiplier:1 constant:0]];
-    
-    UIImageView * bottomLeft = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"scan_3"]];
-    [backView addSubview:bottomLeft];
-    bottomLeft.translatesAutoresizingMaskIntoConstraints = NO;
-    [backView addConstraint:[NSLayoutConstraint constraintWithItem:bottomLeft attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:topLeft attribute:NSLayoutAttributeLeft multiplier:1 constant: 0]];
-    [backView addConstraint:[NSLayoutConstraint constraintWithItem:bottomLeft attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:backView attribute:NSLayoutAttributeBottom multiplier:1 constant:0]];
-    [backView addConstraint:[NSLayoutConstraint constraintWithItem:bottomLeft attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:topLeft attribute:NSLayoutAttributeWidth multiplier:1 constant:0]];
-    [backView addConstraint:[NSLayoutConstraint constraintWithItem:bottomLeft attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:topLeft attribute:NSLayoutAttributeHeight multiplier:1 constant:0]];
-    
-    UIImageView * bottomRight = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"scan_4"]];
-    [inView addSubview:bottomRight];
-    bottomRight.translatesAutoresizingMaskIntoConstraints = NO;
-    [inView addConstraint:[NSLayoutConstraint constraintWithItem:bottomRight attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:topRight attribute:NSLayoutAttributeRight multiplier:1 constant: 0]];
-    [inView addConstraint:[NSLayoutConstraint constraintWithItem:bottomRight attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:bottomLeft attribute:NSLayoutAttributeCenterY multiplier:1 constant:0]];
-    [inView addConstraint:[NSLayoutConstraint constraintWithItem:bottomRight attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:topLeft attribute:NSLayoutAttributeWidth multiplier:1 constant:0]];
-    [inView addConstraint:[NSLayoutConstraint constraintWithItem:bottomRight attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:topLeft attribute:NSLayoutAttributeHeight multiplier:1 constant:0]];
-    
-    UIImageView *line = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"scan_net"]];
-    [backView addSubview:line];
-    line.translatesAutoresizingMaskIntoConstraints = NO;
-    [backView addConstraint:[NSLayoutConstraint constraintWithItem:line attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:backView attribute:NSLayoutAttributeCenterX multiplier:1.f constant:0]];
-    self.bottomConstraint = [NSLayoutConstraint constraintWithItem:line attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:backView attribute:NSLayoutAttributeBottom multiplier:1.f constant:0];
-    [backView addConstraint:self.bottomConstraint];
-    [backView addConstraint:[NSLayoutConstraint constraintWithItem:line attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.f constant:rect.size.width]];
-    [backView addConstraint:[NSLayoutConstraint constraintWithItem:line attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.f constant:rect.size.height]];
-    self.line = line;
 }
 
 /**
@@ -166,15 +107,12 @@
 - (void)startRunning {
     if (![_session isRunning]) {
         [_session startRunning];
-        [self.timer fire];
     }
 }
 
 - (void)stopRunning {
     if ([_session isRunning]) {
         [_session stopRunning];
-        [self.timer invalidate];
-//        self.timer = nil;
     }
 }
 

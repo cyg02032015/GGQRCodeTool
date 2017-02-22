@@ -7,6 +7,7 @@
 //
 
 #import "GGGenerateViewController.h"
+#import "GGQRCodeTool.h"
 
 @interface GGGenerateViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *imgView;

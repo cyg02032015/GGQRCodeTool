@@ -7,6 +7,7 @@
 //
 
 #import "GGRecognitionViewController.h"
+#import "GGQRCodeTool.h"
 
 @interface GGRecognitionViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;

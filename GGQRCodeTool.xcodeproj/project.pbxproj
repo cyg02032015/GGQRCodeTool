@@ -8,16 +8,71 @@
 
 /* Begin PBXBuildFile section */
 		D80DBAB91E5C15D800D0566B /* GGQRCodeTool.h in Headers */ = {isa = PBXBuildFile; fileRef = D80DBAB71E5C15D800D0566B /* GGQRCodeTool.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D80DBAC91E5C161800D0566B /* GGGenerateTool.h in Headers */ = {isa = PBXBuildFile; fileRef = D80DBAC01E5C161800D0566B /* GGGenerateTool.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D80DBACA1E5C161800D0566B /* GGGenerateTool.m in Sources */ = {isa = PBXBuildFile; fileRef = D80DBAC11E5C161800D0566B /* GGGenerateTool.m */; };
+		D80DBACB1E5C161800D0566B /* GGQRCodeRecognitionTool.h in Headers */ = {isa = PBXBuildFile; fileRef = D80DBAC21E5C161800D0566B /* GGQRCodeRecognitionTool.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D80DBACC1E5C161800D0566B /* GGQRCodeRecognitionTool.m in Sources */ = {isa = PBXBuildFile; fileRef = D80DBAC31E5C161800D0566B /* GGQRCodeRecognitionTool.m */; };
+		D80DBACD1E5C161800D0566B /* GGScanTool.h in Headers */ = {isa = PBXBuildFile; fileRef = D80DBAC41E5C161800D0566B /* GGScanTool.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D80DBACE1E5C161800D0566B /* GGScanTool.m in Sources */ = {isa = PBXBuildFile; fileRef = D80DBAC51E5C161800D0566B /* GGScanTool.m */; };
+		D80DBACF1E5C161800D0566B /* UIView+GGExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = D80DBAC61E5C161800D0566B /* UIView+GGExtension.h */; };
+		D80DBAD01E5C161800D0566B /* UIView+GGExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = D80DBAC71E5C161800D0566B /* UIView+GGExtension.m */; };
+		D80DBAD31E5C225A00D0566B /* GGQRCode.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D80DBAD21E5C225A00D0566B /* GGQRCode.bundle */; };
+		D80DBAD71E5C24BA00D0566B /* GGConst.h in Headers */ = {isa = PBXBuildFile; fileRef = D80DBABF1E5C161800D0566B /* GGConst.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D80DBAF71E5D737D00D0566B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D80DBAF61E5D737D00D0566B /* main.m */; };
+		D80DBAFA1E5D737D00D0566B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D80DBAF91E5D737D00D0566B /* AppDelegate.m */; };
+		D80DBAFD1E5D737D00D0566B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D80DBAFC1E5D737D00D0566B /* ViewController.m */; };
+		D80DBB001E5D737D00D0566B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D80DBAFE1E5D737D00D0566B /* Main.storyboard */; };
+		D80DBB021E5D737D00D0566B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D80DBB011E5D737D00D0566B /* Assets.xcassets */; };
+		D80DBB051E5D737D00D0566B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D80DBB031E5D737D00D0566B /* LaunchScreen.storyboard */; };
+		D80DBB101E5D73FB00D0566B /* GGGenerateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D80DBB0B1E5D73FB00D0566B /* GGGenerateViewController.m */; };
+		D80DBB111E5D73FB00D0566B /* GGRecognitionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D80DBB0D1E5D73FB00D0566B /* GGRecognitionViewController.m */; };
+		D80DBB121E5D73FB00D0566B /* GGScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D80DBB0F1E5D73FB00D0566B /* GGScanViewController.m */; };
+		D80DBB131E5D763B00D0566B /* GGGenerateTool.m in Sources */ = {isa = PBXBuildFile; fileRef = D80DBAC11E5C161800D0566B /* GGGenerateTool.m */; };
+		D80DBB141E5D763B00D0566B /* GGQRCodeRecognitionTool.m in Sources */ = {isa = PBXBuildFile; fileRef = D80DBAC31E5C161800D0566B /* GGQRCodeRecognitionTool.m */; };
+		D80DBB151E5D763B00D0566B /* GGScanTool.m in Sources */ = {isa = PBXBuildFile; fileRef = D80DBAC51E5C161800D0566B /* GGScanTool.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		D80DBAB41E5C15D800D0566B /* GGQRCodeTool.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GGQRCodeTool.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D80DBAB71E5C15D800D0566B /* GGQRCodeTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GGQRCodeTool.h; sourceTree = "<group>"; };
 		D80DBAB81E5C15D800D0566B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D80DBABF1E5C161800D0566B /* GGConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GGConst.h; sourceTree = "<group>"; };
+		D80DBAC01E5C161800D0566B /* GGGenerateTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GGGenerateTool.h; sourceTree = "<group>"; };
+		D80DBAC11E5C161800D0566B /* GGGenerateTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GGGenerateTool.m; sourceTree = "<group>"; };
+		D80DBAC21E5C161800D0566B /* GGQRCodeRecognitionTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GGQRCodeRecognitionTool.h; sourceTree = "<group>"; };
+		D80DBAC31E5C161800D0566B /* GGQRCodeRecognitionTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GGQRCodeRecognitionTool.m; sourceTree = "<group>"; };
+		D80DBAC41E5C161800D0566B /* GGScanTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GGScanTool.h; sourceTree = "<group>"; };
+		D80DBAC51E5C161800D0566B /* GGScanTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GGScanTool.m; sourceTree = "<group>"; };
+		D80DBAC61E5C161800D0566B /* UIView+GGExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+GGExtension.h"; sourceTree = "<group>"; };
+		D80DBAC71E5C161800D0566B /* UIView+GGExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+GGExtension.m"; sourceTree = "<group>"; };
+		D80DBAD21E5C225A00D0566B /* GGQRCode.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GGQRCode.bundle; path = ../GGQRCode.bundle; sourceTree = "<group>"; };
+		D80DBAF31E5D737D00D0566B /* GGQRCodeToolExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GGQRCodeToolExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D80DBAF61E5D737D00D0566B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D80DBAF81E5D737D00D0566B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		D80DBAF91E5D737D00D0566B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		D80DBAFB1E5D737D00D0566B /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		D80DBAFC1E5D737D00D0566B /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		D80DBAFF1E5D737D00D0566B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D80DBB011E5D737D00D0566B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D80DBB041E5D737D00D0566B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D80DBB061E5D737D00D0566B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D80DBB0A1E5D73FB00D0566B /* GGGenerateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GGGenerateViewController.h; sourceTree = "<group>"; };
+		D80DBB0B1E5D73FB00D0566B /* GGGenerateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GGGenerateViewController.m; sourceTree = "<group>"; };
+		D80DBB0C1E5D73FB00D0566B /* GGRecognitionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GGRecognitionViewController.h; sourceTree = "<group>"; };
+		D80DBB0D1E5D73FB00D0566B /* GGRecognitionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GGRecognitionViewController.m; sourceTree = "<group>"; };
+		D80DBB0E1E5D73FB00D0566B /* GGScanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GGScanViewController.h; sourceTree = "<group>"; };
+		D80DBB0F1E5D73FB00D0566B /* GGScanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GGScanViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		D80DBAB01E5C15D800D0566B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D80DBAF01E5D737D00D0566B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -31,6 +86,7 @@
 			isa = PBXGroup;
 			children = (
 				D80DBAB61E5C15D800D0566B /* GGQRCodeTool */,
+				D80DBAF41E5D737D00D0566B /* GGQRCodeToolExample */,
 				D80DBAB51E5C15D800D0566B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -39,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				D80DBAB41E5C15D800D0566B /* GGQRCodeTool.framework */,
+				D80DBAF31E5D737D00D0566B /* GGQRCodeToolExample.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -47,9 +104,49 @@
 			isa = PBXGroup;
 			children = (
 				D80DBAB71E5C15D800D0566B /* GGQRCodeTool.h */,
+				D80DBABF1E5C161800D0566B /* GGConst.h */,
+				D80DBAC01E5C161800D0566B /* GGGenerateTool.h */,
+				D80DBAC11E5C161800D0566B /* GGGenerateTool.m */,
+				D80DBAC21E5C161800D0566B /* GGQRCodeRecognitionTool.h */,
+				D80DBAC31E5C161800D0566B /* GGQRCodeRecognitionTool.m */,
+				D80DBAC41E5C161800D0566B /* GGScanTool.h */,
+				D80DBAC51E5C161800D0566B /* GGScanTool.m */,
+				D80DBAC61E5C161800D0566B /* UIView+GGExtension.h */,
+				D80DBAC71E5C161800D0566B /* UIView+GGExtension.m */,
+				D80DBAD21E5C225A00D0566B /* GGQRCode.bundle */,
 				D80DBAB81E5C15D800D0566B /* Info.plist */,
 			);
 			path = GGQRCodeTool;
+			sourceTree = "<group>";
+		};
+		D80DBAF41E5D737D00D0566B /* GGQRCodeToolExample */ = {
+			isa = PBXGroup;
+			children = (
+				D80DBAF81E5D737D00D0566B /* AppDelegate.h */,
+				D80DBAF91E5D737D00D0566B /* AppDelegate.m */,
+				D80DBAFB1E5D737D00D0566B /* ViewController.h */,
+				D80DBAFC1E5D737D00D0566B /* ViewController.m */,
+				D80DBB0E1E5D73FB00D0566B /* GGScanViewController.h */,
+				D80DBB0F1E5D73FB00D0566B /* GGScanViewController.m */,
+				D80DBB0A1E5D73FB00D0566B /* GGGenerateViewController.h */,
+				D80DBB0B1E5D73FB00D0566B /* GGGenerateViewController.m */,
+				D80DBB0C1E5D73FB00D0566B /* GGRecognitionViewController.h */,
+				D80DBB0D1E5D73FB00D0566B /* GGRecognitionViewController.m */,
+				D80DBAFE1E5D737D00D0566B /* Main.storyboard */,
+				D80DBB011E5D737D00D0566B /* Assets.xcassets */,
+				D80DBB031E5D737D00D0566B /* LaunchScreen.storyboard */,
+				D80DBB061E5D737D00D0566B /* Info.plist */,
+				D80DBAF51E5D737D00D0566B /* Supporting Files */,
+			);
+			path = GGQRCodeToolExample;
+			sourceTree = "<group>";
+		};
+		D80DBAF51E5D737D00D0566B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D80DBAF61E5D737D00D0566B /* main.m */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -59,6 +156,11 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D80DBAD71E5C24BA00D0566B /* GGConst.h in Headers */,
+				D80DBACF1E5C161800D0566B /* UIView+GGExtension.h in Headers */,
+				D80DBAC91E5C161800D0566B /* GGGenerateTool.h in Headers */,
+				D80DBACD1E5C161800D0566B /* GGScanTool.h in Headers */,
+				D80DBACB1E5C161800D0566B /* GGQRCodeRecognitionTool.h in Headers */,
 				D80DBAB91E5C15D800D0566B /* GGQRCodeTool.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -84,6 +186,23 @@
 			productReference = D80DBAB41E5C15D800D0566B /* GGQRCodeTool.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		D80DBAF21E5D737D00D0566B /* GGQRCodeToolExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D80DBB071E5D737D00D0566B /* Build configuration list for PBXNativeTarget "GGQRCodeToolExample" */;
+			buildPhases = (
+				D80DBAEF1E5D737D00D0566B /* Sources */,
+				D80DBAF01E5D737D00D0566B /* Frameworks */,
+				D80DBAF11E5D737D00D0566B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GGQRCodeToolExample;
+			productName = GGQRCodeToolExample;
+			productReference = D80DBAF31E5D737D00D0566B /* GGQRCodeToolExample.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -97,6 +216,10 @@
 						CreatedOnToolsVersion = 8.2.1;
 						ProvisioningStyle = Automatic;
 					};
+					D80DBAF21E5D737D00D0566B = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+					};
 				};
 			};
 			buildConfigurationList = D80DBAAE1E5C15D800D0566B /* Build configuration list for PBXProject "GGQRCodeTool" */;
@@ -105,6 +228,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = D80DBAAA1E5C15D800D0566B;
 			productRefGroup = D80DBAB51E5C15D800D0566B /* Products */;
@@ -112,6 +236,7 @@
 			projectRoot = "";
 			targets = (
 				D80DBAB31E5C15D800D0566B /* GGQRCodeTool */,
+				D80DBAF21E5D737D00D0566B /* GGQRCodeToolExample */,
 			);
 		};
 /* End PBXProject section */
@@ -121,6 +246,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D80DBAD31E5C225A00D0566B /* GGQRCode.bundle in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D80DBAF11E5D737D00D0566B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D80DBB051E5D737D00D0566B /* LaunchScreen.storyboard in Resources */,
+				D80DBB021E5D737D00D0566B /* Assets.xcassets in Resources */,
+				D80DBB001E5D737D00D0566B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -131,10 +267,49 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D80DBACA1E5C161800D0566B /* GGGenerateTool.m in Sources */,
+				D80DBACC1E5C161800D0566B /* GGQRCodeRecognitionTool.m in Sources */,
+				D80DBAD01E5C161800D0566B /* UIView+GGExtension.m in Sources */,
+				D80DBACE1E5C161800D0566B /* GGScanTool.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D80DBAEF1E5D737D00D0566B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D80DBB131E5D763B00D0566B /* GGGenerateTool.m in Sources */,
+				D80DBB141E5D763B00D0566B /* GGQRCodeRecognitionTool.m in Sources */,
+				D80DBB151E5D763B00D0566B /* GGScanTool.m in Sources */,
+				D80DBAFD1E5D737D00D0566B /* ViewController.m in Sources */,
+				D80DBB111E5D73FB00D0566B /* GGRecognitionViewController.m in Sources */,
+				D80DBB101E5D73FB00D0566B /* GGGenerateViewController.m in Sources */,
+				D80DBAFA1E5D737D00D0566B /* AppDelegate.m in Sources */,
+				D80DBAF71E5D737D00D0566B /* main.m in Sources */,
+				D80DBB121E5D73FB00D0566B /* GGScanViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		D80DBAFE1E5D737D00D0566B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D80DBAFF1E5D737D00D0566B /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		D80DBB031E5D737D00D0566B /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D80DBB041E5D737D00D0566B /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		D80DBABA1E5C15D800D0566B /* Debug */ = {
@@ -178,7 +353,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -223,7 +398,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -244,6 +419,8 @@
 				INFOPLIST_FILE = GGQRCodeTool/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				OTHER_LDFLAGS = "-Objc";
 				PRODUCT_BUNDLE_IDENTIFIER = com.YG.GGQRCodeTool;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -261,9 +438,35 @@
 				INFOPLIST_FILE = GGQRCodeTool/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				OTHER_LDFLAGS = "-Objc";
 				PRODUCT_BUNDLE_IDENTIFIER = com.YG.GGQRCodeTool;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		D80DBB081E5D737D00D0566B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = GGQRCodeToolExample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.YG.GGQRCodeToolExample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		D80DBB091E5D737D00D0566B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = GGQRCodeToolExample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.YG.GGQRCodeToolExample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
 		};
@@ -284,6 +487,14 @@
 			buildConfigurations = (
 				D80DBABD1E5C15D800D0566B /* Debug */,
 				D80DBABE1E5C15D800D0566B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		D80DBB071E5D737D00D0566B /* Build configuration list for PBXNativeTarget "GGQRCodeToolExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D80DBB081E5D737D00D0566B /* Debug */,
+				D80DBB091E5D737D00D0566B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};

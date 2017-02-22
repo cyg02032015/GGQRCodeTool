@@ -1,0 +1,15 @@
+//
+//  GGQRCodeRecognitionTool.h
+//  GGScanCode
+//
+//  Created by C on 2017/2/21.
+//  Copyright © 2017年 YoungKook. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+
+@interface GGQRCodeRecognitionTool : NSObject
+
++ (NSMutableArray *)recognitionWithQRCode:(UIImage *)qrImage;
+
+@end

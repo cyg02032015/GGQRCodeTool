@@ -24,7 +24,7 @@
     [_textField addTarget:self action:@selector(getText:) forControlEvents:UIControlEventEditingChanged];
 }
 - (IBAction)generate:(id)sender {
-    UIImage *img = [GGGenerateTool generrateQRCodeWithContent:_content centerImg:[UIImage imageNamed:@"WechatIMG25.jpeg"]];
+    UIImage *img = [GGGenerateTool generateQRCodeWithContent:_content centerImg:[UIImage imageNamed:@"WechatIMG25.jpeg"]];
     _imgView.image = img;
 }
 - (void)getText:(UITextField *)sender {

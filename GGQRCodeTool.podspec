@@ -8,6 +8,6 @@ Pod::Spec.new do |s|
   s.social_media_url   = "http://youngkook.cn/"
   s.ios.deployment_target = "8.0"
   s.source       = { :git => "https://github.com/cyg02032015/GGQRCodeTool.git", :tag => s.version }
-  s.source_files  = "GGQRCodeTool/GGQRCodeTool"
+  s.source_files  = "GGQRCodeTool"
   s.requires_arc = true
 end

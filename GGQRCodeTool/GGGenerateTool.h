@@ -16,16 +16,16 @@
  @param content 内容
  @return 二维码图片
  */
-+ (UIImage *)generrateQRCodeWithContent:(NSString *)content;
++ (UIImage *)generateQRCodeWithContent:(NSString *)content;
 
 /**
  生成二维码
 
  @param content 内容
  @param centerImg 中间头像图片
- @return 合成后的二维码图片
+ @return 合成后的二维码图片  centerSize默认80
  */
-+ (UIImage *)generrateQRCodeWithContent:(NSString *)content centerImg:(UIImage *)centerImg;
++ (UIImage *)generateQRCodeWithContent:(NSString *)content centerImg:(UIImage *)centerImg;
 
 /**
  生成二维码
@@ -35,6 +35,6 @@
  @param centerSize 中间头像尺寸
  @return 合成后的二维码图片
  */
-+ (UIImage *)generrateQRCodeWithContent:(NSString *)content centerImg:(UIImage *)centerImg centerSize:(CGSize)centerSize;
++ (UIImage *)generateQRCodeWithContent:(NSString *)content centerImg:(UIImage *)centerImg centerSize:(CGSize)centerSize;
 
 @end

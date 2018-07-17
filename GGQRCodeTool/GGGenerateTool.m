@@ -10,15 +10,15 @@
 
 @implementation GGGenerateTool
 
-+ (UIImage *)generrateQRCodeWithContent:(NSString *)content {
-    return [self generrateQRCodeWithContent:content centerImg:nil centerSize:CGSizeMake(80, 80)];
++ (UIImage *)generateQRCodeWithContent:(NSString *)content {
+    return [self generateQRCodeWithContent:content centerImg:nil centerSize:CGSizeMake(80, 80)];
 }
 
-+ (UIImage *)generrateQRCodeWithContent:(NSString *)content centerImg:(UIImage *)centerImg {
-    return [self generrateQRCodeWithContent:content centerImg:centerImg centerSize:CGSizeMake(80, 80)];
++ (UIImage *)generateQRCodeWithContent:(NSString *)content centerImg:(UIImage *)centerImg {
+    return [self generateQRCodeWithContent:content centerImg:centerImg centerSize:CGSizeMake(80, 80)];
 }
 
-+ (UIImage *)generrateQRCodeWithContent:(NSString *)content centerImg:(UIImage *)centerImg centerSize:(CGSize)centerSize {
++ (UIImage *)generateQRCodeWithContent:(NSString *)content centerImg:(UIImage *)centerImg centerSize:(CGSize)centerSize {
     // 创建一个二维码滤镜
     CIFilter *filter = [CIFilter filterWithName:@"CIQRCodeGenerator"];
     [filter setDefaults];
